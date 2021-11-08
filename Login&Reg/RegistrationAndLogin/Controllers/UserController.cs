@@ -368,9 +368,9 @@ namespace RegistrationAndLogin.Controllers
             var verifyUrl = " / User / " + emailFor + " / ";
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var formEmail = new MailAddress("tathyainfotechtest@gmail.com", "Tathya Infotech");
+            var formEmail = new MailAddress("abc@gmail.com", "Tathya Infotech");
             var toEmail = new MailAddress(email);
-            var fromEmailPassword = "Tipl@12345!";
+            var fromEmailPassword = "*******";
 
             string subject = " ";
             string body = " ";
@@ -414,9 +414,9 @@ namespace RegistrationAndLogin.Controllers
 
             var verifyUrl = "/User/"+emailFor+"/" + ActivetionCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
-            var fromEmail = new MailAddress("tathyainfotechtest@gmail.com", "Tathya Infotech");
+            var fromEmail = new MailAddress("abc@gmail.com", "Tathya Infotech");
             var toEmail = new MailAddress(emailID);
-            var fromEmailPassword = "Tipl@12345!";
+            var fromEmailPassword = "*******";
             string subject = "";
             string body = "";
             if (emailFor == "VerifyAccount")
