@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 
 namespace RegistrationAndLogin.Controllers
 {
+    [HandleError]
     public class UserController : Controller
     {
 
@@ -253,6 +254,15 @@ namespace RegistrationAndLogin.Controllers
         [HttpGet]
         public ActionResult welcomre()
         {
+            if (Session["Email"] == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            return View();
+        }
+        public ActionResult PageNoteFound()
+        {
+            
             return View();
         }
 
