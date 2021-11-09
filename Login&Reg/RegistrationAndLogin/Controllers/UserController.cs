@@ -138,12 +138,19 @@ namespace RegistrationAndLogin.Controllers
         [HttpGet]
         public ActionResult VerifyOtp(string text)
         {
-            if (text == "process")
+            if (Session["Email"] == null)
             {
-                resendOtp();
-                return View();
+                return RedirectToAction("Login", "User");
             }
-           
+            else
+            {
+                if (text == "process")
+                {
+                    resendOtp();
+                    return View();
+                }
+            }
+
             return View();
         }
 
@@ -157,22 +164,25 @@ namespace RegistrationAndLogin.Controllers
         */
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult VerifyOtp(UserM login, string text)
+        public ActionResult VerifyOtp(UserM login, string submit, string process)
         {
-            String message = "";
-            int userenterotp = Convert.ToInt32(login.VeryOtp);
-            if (userenterotp == 0)
+            //  String message = submit.ToString();
+
+            if (submit == "Verify")
+            {
+                int userenterotp = Convert.ToInt32(login.VeryOtp);
+
+                if (IsValidUser(userenterotp))
+                {
+
+                    return RedirectToAction("welcomre");
+                }
+            }
+            else if (process == "Resend One-Time password")
             {
                 resendOtp();
                 return View();
             }
-
-            if (IsValidUser(userenterotp))
-            {
-                
-                return RedirectToAction("welcomre");
-            }
-            
 
             return View();
         }
