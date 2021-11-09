@@ -1,0 +1,27 @@
+@ Auther - Milan Naliyapara @
+-----------------------------
+
+Please Follow This Step :-
+======================================
+
+Step - 1
+Create Database(UserM) in SQLserver.
+--------------------------------------
+Step - 2
+Run Script.sql.
+--------------------------------------
+Step - 3
+Install framework 4.7.2 and above
+--------------------------------------
+Step - 4
+Change Connection in web.config file
+--------------------------------------
+Step - 5
+Set smtp mail configuration in web.config
+--------------------------------------
+Step - 6
+Change Mail Id and Password
+--------------------------------------
+Step - 7
+Executed code. 
+--------------------------------------
